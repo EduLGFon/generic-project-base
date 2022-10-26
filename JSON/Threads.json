@@ -1,0 +1,19 @@
+{
+    "POSTGRES": {
+        "name": "pg",
+        "perms": {
+            "env": [
+                "PGAPPNAME",
+                "PGDATABASE",
+                "PGHOST",
+                "PGOPTIONS",
+                "PGPASSWORD",
+                "PGPORT",
+                "PGUSER"
+            ],
+            "net": [
+                "localhost:15001"
+            ]
+        }
+    }
+}
