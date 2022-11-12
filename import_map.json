@@ -1,0 +1,12 @@
+{
+    "imports": {
+        "@std": "https://deno.land/std@0.136.0/async/mod.ts",
+        "@postgres": "https://deno.land/x/postgres@v0.17.0/mod.ts",
+        "@luxon": "https://moment.github.io/luxon/es6/luxon.min.js",
+        "@spinners": "https://deno.land/x/spinners@v1.1.2/mod.ts",
+        "@dotenv": "https://deno.land/x/dotenv@v3.2.0/mod.ts",
+        "@colors": "https://deno.land/x/console_colors@v0.0.2/mod.ts",
+        "Settings": "./JSON/Settings.json",
+        "@prototypes": "./Plugins/Prototypes.ts"
+    }
+}

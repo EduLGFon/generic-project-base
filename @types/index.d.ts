@@ -12,15 +12,17 @@ interface String {
 
 interface Window {
     postMessage(...msg: any): void;
-    onmessage(e: MessageEvent): void | undefined
+    onmessage(e: MessageEvent): void | undefined;
 }
 
 interface Postgres {
     connect(): void;
     end(): void;
-    ready: boolean
+    ready: boolean;
 }
 
 interface Services {
     pg: Postgres;
 }
+
+type threadNames = "POSTGRES"
