@@ -1,3 +1,19 @@
+# Settings
+application.yml
+*.env
+
+# Modules
 Test/
-deno.lock
-**.env
+Build/
+Dist/
+
+# Binaries
+*.exe
+*.jar
+*.bundle
+
+# Logs / Lokefiles
+*lock.json
+*.lock
+*.log
+logs/

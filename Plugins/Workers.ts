@@ -9,11 +9,12 @@ async function loadServices(dir: string) {
             continue;
         }
 
-        const sector = s.name.toSector() as "POSTGRES";
-        const name = Threads[sector]?.name as "pg";
+        const sector = s.name.toSector() as threadFiles;
+        const name = Threads[sector]?.name as threadNames;
         if (services[name]?.ready) continue;
 
         const spin = logSpin(sector, "Carregando o serviço...");
+
         const worker = new Worker(import.meta.resolve(`${dir}/${s.name}`), {
             type: "module",
             deno: {
@@ -23,11 +24,11 @@ async function loadServices(dir: string) {
 
         await new Promise((res) => {
             worker.onmessage = async (event: MessageEvent) => {
-                const { id, msg, service } = event.data;
+                const { id, msg, src } = event.data;
 
                 if (id === 1) {
                     spin.end(msg);
-                    services[name] = service;
+                    services[name] = src;
                     res(true);
                 } else {
                     spin.fail(msg);
