@@ -4,5 +4,10 @@
             "@types/*.d.ts"
         ]
     },
-    "importMap": "./import_map.json"
+    "importMap": "./import_map.json",
+    "fmt": {
+        "options": {
+            "indentWidth": 4
+        }
+    }
 }

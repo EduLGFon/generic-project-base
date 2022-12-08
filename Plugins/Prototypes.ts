@@ -1,18 +1,21 @@
-import { TerminalSpinner, SpinnerTypes } from "@spinners";
-import config from "Settings" assert { type: 'json' };
+import { SpinnerTypes, TerminalSpinner } from "@spinners";
+import config from "Settings" assert { type: "json" };
 import type * as _Types from "../@types/index.d.ts";
 import { DateTime } from "@luxon";
 import colors from "@colors";
 
 declare global { // criando variável global 'services'
     const services: Services;
-    interface Window { services: unknown }
+    interface Window {
+        services: unknown;
+    }
 }
 
 window.services = {};
 
 export default () => {
     colors; // Carregando o arquivo da lib (essa função é executada sozinha)
+
     const spin = logSpin("main", "Configurando prototypes...");
     /* Number Prototypes */
 
@@ -53,29 +56,36 @@ export default () => {
 
     spin.end("Prototypes configurados.");
 };
-export { now, logSpin };
+export { logSpin, now };
 
 const logSpin = (sector: string, text: string) => {
     const sp = new TerminalSpinner({
         text: formatLog(sector, text),
         spinner: SpinnerTypes.arc,
-        color: 'red'
+        color: "red",
     })
-        .start()
+        .start();
 
     return {
         end: (msg: string) => sp.succeed(formatLog(sector, msg)),
-        fail: (msg: string) => sp.fail(formatLog(sector, msg))
-    }
-}
+        fail: (msg: string) => sp.fail(formatLog(sector, msg)),
+    };
+};
 
 function formatLog(sector: string, text: string) {
     return [ // isso pode parecer meio confuso
-        '[', sector.toUpperCase().blue, '|', now().toFormat('T').yellow, '|', // mas é só a configuração
-        ((Deno.memoryUsage().rss / 1048576).toFixed(2) + 'MB').green, '] -', text // do console.log
-    ].join(' ');  // [ SETOR | 18:04 | 69MB ]
+        "[",
+        sector.toUpperCase().blue,
+        "|",
+        now().toFormat("T").yellow,
+        "|", // mas é só a configuração
+        ((Deno.memoryUsage().rss / 1048576).toFixed(2) + "MB").green,
+        "] -",
+        text, // do console.log
+    ].join(" "); // [ SETOR | 18:04 | 69MB ]
 }
 
-const now = () => DateTime.now()
-    .setZone(config.date.timezone) // hora com o fuso-horário corrigido
-    .setLocale(config.date.locale); //definindo o idioma da formatação de datas
+const now = () =>
+    DateTime.now()
+        .setZone(config.date.timezone) // hora com o fuso-horário corrigido
+        .setLocale(config.date.locale); //definindo o idioma da formatação de datas

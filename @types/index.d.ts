@@ -25,5 +25,5 @@ interface Services {
     pg: Postgres;
 }
 
-type threadFiles = 'POSTGRES';
-type threadNames = 'pg';
+type threadFiles = "POSTGRES";
+type threadNames = "pg";
