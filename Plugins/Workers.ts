@@ -2,7 +2,7 @@ import Threads from "../JSON/Threads.json" assert { type: "json" };
 import { logSpin } from "@prototypes";
 import { delay } from "@std";
 
-async function loadServices(dir: string) {
+export default async function loadServices(dir: string) {
     for (const s of Deno.readDirSync(dir)) {
         if (s.isDirectory) {
             loadServices(`${dir}/${s.name}`);
@@ -18,11 +18,11 @@ async function loadServices(dir: string) {
         const worker = new Worker(import.meta.resolve(`${dir}/${s.name}`), {
             type: "module",
             deno: {
-                permissions: Threads[sector].perms || "none",
+                permissions: Threads[sector]?.perms || "none",
             },
         });
 
-        await new Promise((res) => {
+        return new Promise((res) => {
             worker.onmessage = async (event: MessageEvent) => {
                 const { id, msg, src } = event.data;
 
@@ -40,5 +40,3 @@ async function loadServices(dir: string) {
         });
     }
 }
-
-export { loadServices };

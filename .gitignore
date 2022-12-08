@@ -2,10 +2,8 @@
 application.yml
 *.env
 
-# Modules
-Test/
-Build/
-Dist/
+# Development
+Test.ts
 
 # Binaries
 *.exe

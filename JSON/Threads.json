@@ -12,7 +12,7 @@
                 "PGUSER"
             ],
             "net": [
-                "localhost:15001"
+                "localhost:5432"
             ]
         }
     }
