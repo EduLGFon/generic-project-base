@@ -8,13 +8,12 @@ export default async function CLI() {
         suggestions: lastCode,
     });
 
-    lastCode.push(code);
+    lastCode.unshift(code);
 
     try {
         // if (code.startsWith('.')) {
 
         // }
-
 
         const res = await eval(code);
 

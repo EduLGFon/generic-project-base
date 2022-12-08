@@ -5,6 +5,7 @@
         "@luxon": "https://moment.github.io/luxon/es6/luxon.min.js",
         "@postgres": "https://deno.land/x/postgres@v0.17.0/mod.ts",
         "@spinners": "https://deno.land/x/spinners@v1.1.2/mod.ts",
+        "@denoname": "https://x.nest.land/denoname@0.8.2/mod.ts",
         "@dotenv": "https://deno.land/x/dotenv@v3.2.0/mod.ts",
         "@std": "https://deno.land/std@0.136.0/async/mod.ts",
         "@prototypes": "./Plugins/Prototypes.ts",

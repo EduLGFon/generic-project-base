@@ -1,7 +1,7 @@
 {
-    "Log": {
+    "ConsoleLog": {
         "scope": "javascript,typescript",
-        "prefix": "log",
+        "prefix": "clg",
         "body": [
             "console.log(${1:`${2:Hello World!}`});",
             "$0"
