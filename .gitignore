@@ -1,0 +1,12 @@
+# Settings
+*.env
+
+# Development
+Test.ts
+Test/
+
+# Logs / Lokefiles
+*lock.json
+*.lock
+*.log
+logs/

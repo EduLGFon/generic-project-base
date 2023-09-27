@@ -1,0 +1,7 @@
+{
+  "deno.lint": true,
+  "deno.enable": true,
+  "deno.unstable": false,
+  "deno.config": "./deno.json",
+  "deno.inlayHints.variableTypes.enabled": false
+}

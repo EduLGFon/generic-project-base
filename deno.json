@@ -1,0 +1,39 @@
+{
+	"date": {
+		"timezone": "America/Sao_Paulo",
+		"locale": "pt-br"
+	},
+	"schema": [
+		[
+			"users",
+			"id"
+		],
+		[
+			"groups",
+			"id"
+		]
+	],
+	"fmt": {
+		"indentWidth": 4,
+		"lineWidth": 100,
+		"singleQuote": true,
+		"useTabs": true
+	},
+	"tasks": {
+		"s": "deno run -A Main.ts",
+		"w": "deno run -A --watch Main.ts"
+	},
+	"imports": {
+		"postgres/query": "https://deno.land/x/postgres@v0.17.0/query/query.ts",
+		"luxon": "https://moment.github.io/luxon/es6/luxon.min.js",
+		"postgres": "https://deno.land/x/postgres@v0.17.0/mod.ts",
+		"dotenv": "https://deno.land/x/dotenv@v3.2.0/mod.ts",
+		"std": "https://deno.land/std@0.136.0/async/mod.ts",
+		"@Prototypes": "./Plugins/Prototypes.ts",
+		"@Settings": "./deno.json",
+		"@Plugins/": "./Plugins/",
+		"@Classes/": "./Classes/",
+		"@Types/": "./Types/",
+		"@JSON/": "./JSON/"
+	}
+}

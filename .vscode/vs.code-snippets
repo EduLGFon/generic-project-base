@@ -1,0 +1,20 @@
+{
+    "ConsoleLog": {
+        "scope": "javascript,typescript",
+        "prefix": "clg",
+        "body": [
+            "console.log(${1:`${2:Hello World!}`});",
+            "$0"
+        ],
+        "description": "console.log Snippet"
+    },
+    
+    "Spinner": {
+        "scope": "javascript,typescript",
+        "prefix": "spin",
+        "body": [
+            "const $1 = new Spinner($2, $3);"
+        ],
+        "description": "Creates a new spinner"
+    }
+}
